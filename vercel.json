@@ -1,25 +1,8 @@
 {
-  "version": 2,
-  "env": {
-    "STAGING_ENV": "staging"
-  },
   "builds": [
     {
       "src": "package.json",
-      "use": "@vercel/static-build"
+      "use": "@vercel/node"
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "index.html"
-    }
-  ],
-  "env": {
-    "staging": {
-      "env": {
-        "NODE_ENV": "staging"
-      }
-    }
-  }
+  ]
 }
