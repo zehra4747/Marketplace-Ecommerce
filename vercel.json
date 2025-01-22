@@ -1,8 +1,20 @@
 {
+  "version": 2,
   "builds": [
     {
       "src": "package.json",
-      "use": "@vercel/node"
+      "use": "@vercel/next"
+    }
+  ],
+  "env": {
+    "NEXT_PUBLIC_SANITY_PROJECT_ID": "your_project_id",
+    "NEXT_PUBLIC_SANITY_DATASET": "production",
+    "SANITY_API_TOKEN": "your_api_token"
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
     }
   ]
 }
