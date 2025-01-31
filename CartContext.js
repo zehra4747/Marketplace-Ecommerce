@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 // Create Cart Context
 const CartContext = createContext();
@@ -17,6 +17,21 @@ export const useCart = () => {
 // CartProvider component
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+
+  // Persist cart data in localStorage on mount (client-side)
+  useEffect(() => {
+    const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    setCart(savedCart);
+  }, []);
+
+  // Sync cart with localStorage whenever it changes
+  useEffect(() => {
+    if (cart.length > 0) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    } else {
+      localStorage.removeItem('cart');
+    }
+  }, [cart]);
 
   const addToCart = (product) => {
     setCart((prevCart) => {
