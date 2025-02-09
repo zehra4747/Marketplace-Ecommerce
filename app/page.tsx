@@ -17,8 +17,8 @@ export default function Home() {
     <Hero/>
    
     <Brands/>
-    <div className="h-48"></div>
-   <div className=" mt-96"><Products /></div> 
+    <div className="mt-64 md:mt-0"></div>
+   <div ><Products /></div> 
     <Top_sell/>
  
     <CustomerCarousel/>
