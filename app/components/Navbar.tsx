@@ -78,8 +78,8 @@ const Navbar = () => {
                     <Link href="/cart">
                         <Image src="/Vector (4).png" width={20} height={20} alt="Cart Icon" className="w-[22px] h-[20px]" />
                     </Link>
-                    <Image src="/Vector (5).png" width={20} height={20} alt="User Icon" className="w-[22px] h-[20px]" />
-                </div>
+                 <Link href="/login">  <Image src="/Vector (5).png" width={20} height={20} alt="User Icon" className="w-[22px] h-[20px]" />
+                 </Link> </div>
             </div>
 
             {isMenuOpen && (
